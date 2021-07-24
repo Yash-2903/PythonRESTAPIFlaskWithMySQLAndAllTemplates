@@ -6,7 +6,7 @@ This project is a homework assignment to teach how to get Pycharm setup with Doc
 * Then you need to create a flask framework to serve flask jinja template files and send http POST requests to update, add new records, and delete.
 
 # Assignment
-[Here is the Example of ADD, VIEW, UPDATE, DELETE](https://github.com/Yash-2903/PythonFlaskWithMySQL/blob/FlaskWithMySQLAndTemplates/Homework%205.pdf)
+[Here is the Example of ADD, VIEW, UPDATE, DELETE](https://github.com/Yash-2903/PythonFlaskWithMySQLAllTemplates/blob/master/Homework%205.pdf)
 
 # Reading
 
