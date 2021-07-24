@@ -76,7 +76,7 @@ def form_insert_post():
                  request.form.get('Age'))
     sql_insert_query = """INSERT INTO 
     tblmlbplayers (Name, Team, Position, Height, Weight, Age) 
-    VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    VALUES (%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
