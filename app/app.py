@@ -4,7 +4,6 @@ from flask import Flask, request, Response, redirect
 from flask import render_template
 from flaskext.mysql import MySQL
 from pymysql.cursors import DictCursor
-from pprint import  pprint
 
 app = Flask(__name__)
 mysql = MySQL(cursorclass=DictCursor)
@@ -23,7 +22,6 @@ def index():
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM tblmlbplayers')
     result = cursor.fetchall()
-    pprint(result)
     return render_template('index.html', title='Home', user=user, players=result)
 
 
@@ -124,6 +122,22 @@ def api_edit(player_id) -> str:
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     resp = Response(status=200, mimetype='application/json')
+    return resp
+
+
+@app.route('/api/v1/players', methods=['POST'])
+def api_add() -> str:
+    content = request.json
+    cursor = mysql.get_db().cursor()
+    inputData = (content['Name'], content['Team'], content['Position'],
+                 content['Height'], content['Weight'],
+                 content['Age'])
+    sql_insert_query = """INSERT INTO 
+    tblmlbplayers (Name, Team, Position, Height, Weight, Age) 
+    VALUES (%s, %s,%s, %s,%s, %s) """
+    cursor.execute(sql_insert_query, inputData)
+    mysql.get_db().commit()
+    resp = Response(status=201, mimetype='application/json')
     return resp
 
 
