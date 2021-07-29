@@ -1,12 +1,12 @@
 # Project Description
-This project is a homework assignment to teach how to get Pycharm setup with Docker, Flask, MYSQL
+This project is a homework assignment to teach how to get Pycharm setup with REST API, Docker, Flask, MYSQL
 
 * This project have Docker Compose setup, a python flask app and a mysql server that will load data from the db/init.sql file.
 * The first time the database starts (note you will need to do a docker down by right clicking on the compose file in pycharm docker service to reset the database if you make any   changes to the sql statements that load initially, it doesn’t run the init.sql each time you run your project, just each time docker-compose is run from scratch). 
 * Then you need to create a flask framework to serve flask jinja template files and send http POST requests to update, add new records, and delete.
 
 # Assignment
-[Here is the Example of ADD, VIEW, UPDATE, DELETE](https://github.com/Yash-2903/PythonFlaskWithMySQLAllTemplates/blob/master/Homework%205.pdf)
+[Here is the Example of ADD, VIEW, UPDATE, DELETE with Rest Api](https://github.com/Yash-2903/PythonRESTAPIFlaskWithMySQLAndAllTemplates/blob/master/Project3.pdf)
 
 # Reading
 
