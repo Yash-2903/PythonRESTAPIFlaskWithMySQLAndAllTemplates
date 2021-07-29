@@ -89,6 +89,7 @@ def form_delete_post(player_id):
     return redirect("/", code=302)
 
 
+# Get all Data api
 @app.route('/api/v1/players', methods=['GET'])
 def api_browse() -> str:
     cursor = mysql.get_db().cursor()
@@ -99,6 +100,7 @@ def api_browse() -> str:
     return resp
 
 
+# Get Single Data api
 @app.route('/api/v1/players/<int:player_id>', methods=['GET'])
 def api_retrieve(player_id) -> str:
     cursor = mysql.get_db().cursor()
@@ -109,6 +111,7 @@ def api_retrieve(player_id) -> str:
     return resp
 
 
+# Edit the Data api
 @app.route('/api/v1/players/<int:player_id>', methods=['PUT'])
 def api_edit(player_id) -> str:
     cursor = mysql.get_db().cursor()
@@ -125,6 +128,7 @@ def api_edit(player_id) -> str:
     return resp
 
 
+# Add New Data api
 @app.route('/api/v1/players', methods=['POST'])
 def api_add() -> str:
     content = request.json
@@ -141,6 +145,7 @@ def api_add() -> str:
     return resp
 
 
+# Delete the Data api
 @app.route('/api/v1/players/<int:player_id>', methods=['DELETE'])
 def api_delete(player_id) -> str:
     cursor = mysql.get_db().cursor()
